@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "id": "bizcity.twinweb-addon",
+  "name": "BizCity TwinWeb (Trợ lý /gpt/)",
+  "version": "1.0.0",
+  "_note": "[2026-10-12 12:11 PM Johnny Chu - Chu Hoàng Anh] PHASE-0.102 S102-L20 — manifest of the standalone sibling plugin bizcity-twinweb-addon: the /gpt/ page and its UI. The REST axis bizcity-twinweb/v1, Ask Brain tools and artifact jobs stay in bizcity-twin-ai/core/twinweb-axis. Biz Central Brain — Johnny Chu (Chu Hoàng Anh).",
+  "requires": {
+    "framework": ">=1.1.0",
+    "php": ">=7.4",
+    "wp": ">=6.0",
+    "host_constant": "BIZCITY_TWIN_AI_VERSION"
+  },
+  "loader": {
+    "resolved_by": "BizCity_Addon_Locator::file( 'twinweb/<path>' ) in bizcity-twin-ai (file name + `Zalo Brain Addon: twinweb` header, any folder)",
+    "load_mode_constant": "BIZCITY_TWINWEB_LOAD",
+    "load_mode_default": "active",
+    "layout": "flat"
+  },
+  "owns": {
+    "page": "/gpt/ + 17 sub-pages (rewrite rules), shortcode [bizcity_twin], WordPress page `gpt`",
+    "rest": ["bizcity-twinweb/v1/projects*", "bizcity-twinweb/v1/my-files*", "bizcity-twinweb/v1/crm/tasks*", "bizcity-twinweb/v1/crm/pipeline*", "bizcity-twinweb/v1/admin/profile-templates*", "bizcity-twinweb/v1/me/profile-*"],
+    "admin": "Tools → Twin GPT Profiles",
+    "assets": "ui/dist (single bundle, manifest read by class-twinweb-page.php)"
+  },
+  "does_not_own": "tables bizcity_twinweb_threads / bizcity_twinweb_artifact_jobs, options bizcity_twinweb_*, the REST controller, Ask Brain tools — all in bizcity-twin-ai/core/twinweb-axis, so uninstalling this plugin loses no data"
+}

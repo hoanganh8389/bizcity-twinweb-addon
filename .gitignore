@@ -1,0 +1,17 @@
+# BizCity TwinWeb add-on — production-only repository (R-PROD-REPO: GitHub holds only what a site needs to run).
+# [2026-10-12 12:11 PM Johnny Chu - Chu Hoàng Anh] PHASE-0.102 S102-L20 — allowlist: ignore everything, then re-allow the runtime package.
+/*
+!/.gitignore
+!/bizcity-twinweb-addon.php
+!/bootstrap.php
+!/uninstall.php
+!/manifest.json
+!/README.md
+!/LICENSE
+!/includes/
+# dev-only diagnostics probes stay on the developer's machine (R-DIAG-LOCAL)
+/includes/class-probe-twinweb-*.php
+# the UI: only the built bundle ships (ui/src, node_modules, configs stay local); dist/.vite/manifest.json is read by PHP
+!/ui/
+/ui/*
+!/ui/dist/
